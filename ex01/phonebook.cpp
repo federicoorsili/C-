@@ -6,7 +6,7 @@
 /*   By: forsili <forsili@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 12:04:55 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/22 14:49:46 by forsili          ###   ########.fr       */
+/*   Updated: 2021/04/22 16:46:09 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,37 +21,37 @@ void	add_contact(Phone_Book user[8], int i)
 
 	std::cout << "Insert First Name" << std::endl;
 	std::getline(std::cin, input);
-	user[i].first_name = input;
+	user[i].add_field(0, input);
 	std::cout << "Insert Last Name" << std::endl;
 	std::getline(std::cin, input);
-	user[i].last_name = input;
+	user[i].add_field(1, input);
 	std::cout << "Insert Nickname" << std::endl;
 	std::getline(std::cin, input);
-	user[i].nickname = input;
+	user[i].add_field(2, input);
 	std::cout << "Insert Login" << std::endl;
 	std::getline(std::cin, input);
-	user[i].login = input;
+	user[i].add_field(3, input);
 	std::cout << "Insert Postal address" << std::endl;
 	std::getline(std::cin, input);
-	user[i].postal_address = input;
+	user[i].add_field(4, input);
 	std::cout << "Insert Email address" << std::endl;
 	std::getline(std::cin, input);
-	user[i].email_address = input;
+	user[i].add_field(5, input);
 	std::cout << "Insert Phone number" << std::endl;
 	std::getline(std::cin, input);
-	user[i].phone_number = input;
+	user[i].add_field(6, input);
 	std::cout << "Insert Birthdate" << std::endl;
 	std::getline(std::cin, input);
-	user[i].birthday_date = input;
+	user[i].add_field(7, input);
 	std::cout << "Insert Favorite meal" << std::endl;
 	std::getline(std::cin, input);
-	user[i].favorite_meal = input;
+	user[i].add_field(8, input);
 	std::cout << "Insert Underwear color" << std::endl;
 	std::getline(std::cin, input);
-	user[i].underwear_color = input;
+	user[i].add_field(9, input);
 	std::cout << "Insert Darkest secret" << std::endl;
 	std::getline(std::cin, input);
-	user[i].darkest_secret = input;
+	user[i].add_field(10, input);
 
 	std::cout << "**********************************" << std::endl;
 	std::cout << "*****CONTACT ADDED CORRECTLY******" << std::endl;
@@ -98,17 +98,17 @@ void	display_data(std::string str)
 
 void	display_id(Phone_Book user[8], int id)
 {
-	std::cout << "NAME:           |" << user[id].first_name << std::endl;
-	std::cout << "LAST NAME:      |" << user[id].last_name << std::endl;
-	std::cout << "NICKNAME:       |" << user[id].nickname << std::endl;
-	std::cout << "LOGIN:          |" << user[id].login << std::endl;
-	std::cout << "POSTAL ADDRESS: |" << user[id].postal_address << std::endl;
-	std::cout << "EMAIL ADDRESS:  |" << user[id].email_address << std::endl;
-	std::cout << "PHONE:          |" << user[id].phone_number << std::endl;
-	std::cout << "BIRTHDAY:       |" << user[id].birthday_date << std::endl;
-	std::cout << "FAVOURITE MEAL: |" << user[id].favorite_meal << std::endl;
-	std::cout << "UNDERWEAR COLOR:|" << user[id].underwear_color << std::endl;
-	std::cout << "DARKEST SECRET: |" << user[id].darkest_secret << std::endl;
+	std::cout << "NAME:           |" << user[id].take_field(0) << std::endl;
+	std::cout << "LAST NAME:      |" << user[id].take_field(1) << std::endl;
+	std::cout << "NICKNAME:       |" << user[id].take_field(2) << std::endl;
+	std::cout << "LOGIN:          |" << user[id].take_field(3) << std::endl;
+	std::cout << "POSTAL ADDRESS: |" << user[id].take_field(4) << std::endl;
+	std::cout << "EMAIL ADDRESS:  |" << user[id].take_field(5) << std::endl;
+	std::cout << "PHONE:          |" << user[id].take_field(6) << std::endl;
+	std::cout << "BIRTHDAY:       |" << user[id].take_field(7) << std::endl;
+	std::cout << "FAVOURITE MEAL: |" << user[id].take_field(8) << std::endl;
+	std::cout << "UNDERWEAR COLOR:|" << user[id].take_field(9) << std::endl;
+	std::cout << "DARKEST SECRET: |" << user[id].take_field(10) << std::endl;
 }
 
 void	search_contact(Phone_Book user[8], int i)
@@ -123,11 +123,11 @@ void	search_contact(Phone_Book user[8], int i)
 	{
 		display_index(k);
 		std::cout << "|";
-		display_data(user[k].first_name);
+		display_data(user[k].take_field(0));
 		std::cout << "|";
-		display_data(user[k].last_name);
+		display_data(user[k].take_field(1));
 		std::cout << "|";
-		display_data(user[k].nickname);
+		display_data(user[k].take_field(2));
 		std::cout << "|";
 		std::cout << std::endl;
 		k++;
