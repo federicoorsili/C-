@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <forsili@42.fr>                    +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 12:04:55 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/22 16:46:09 by forsili          ###   ########.fr       */
+/*   Updated: 2021/04/23 16:26:29 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include "Phone_Book.cpp"
-#include <vector>
+#include "Phone_Book.hpp"
 
 void	add_contact(Phone_Book user[8], int i)
 {
@@ -134,7 +131,15 @@ void	search_contact(Phone_Book user[8], int i)
 	}
 	std::cout << "Select an id to browse contact information:" << std::endl;
 	getline(std::cin, input);
-	id = stoi(input);
+	if (input.find_first_not_of("0123456789") == std::string::npos)
+		id = stoi(input);
+	else
+	{
+		std::cout << "**********************************" << std::endl;
+		std::cout << "***** CONTACT DOES NOT EXIST *****" << std::endl;
+		std::cout << "**********************************" << std::endl;
+		return;
+	}
 	if (id >= 0 && id < i)
 		display_id(user, id);
 	else
