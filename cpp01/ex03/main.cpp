@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 12:48:35 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/24 12:55:44 by forsili          ###   ########.fr       */
+/*   Updated: 2021/04/26 18:02:57 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int main()
 	if (input.find_first_not_of("0123456789") == std::string::npos)
 	{
 		n = stoi(input);
-		ZombieHorde *h = new ZombieHorde(n);
-		delete(h);
+		ZombieHorde h = ZombieHorde(n);
+		h.announce();
 	}
 	else
 		std::cout << "Not a valid number" << std::endl;
