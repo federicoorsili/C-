@@ -6,7 +6,7 @@
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 12:42:55 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/26 14:48:34 by forsili          ###   ########.fr       */
+/*   Updated: 2021/04/26 17:26:18 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ int main(int argc, char **argv)
 	std::string		s2(argv[3]);
 	std::string		name_output(argv[1]);
 
-	if (!file_name.is_open())
-	{
-		std::cout << "Error: Impossibile aprire il file in input" << std::endl;
-		exit(0);
-	}
 	if (s1.length() == 0 || s2.length() == 0)
 	{
 		std::cout << "Error: Paramentro vuoto" << std::endl;
+		exit(0);
+	}
+	if (!file_name.is_open())
+	{
+		std::cout << "Error: Impossibile aprire il file in input" << std::endl;
 		exit(0);
 	}
 
@@ -45,6 +45,7 @@ int main(int argc, char **argv)
 	if (!output.is_open())
 	{
 		std::cout << "Error: Impossibile aprire il file di output" << std::endl;
+		file_name.close();
 		exit(0);
 	}
 	

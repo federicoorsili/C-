@@ -6,7 +6,7 @@
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 12:03:02 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/26 16:04:58 by forsili          ###   ########.fr       */
+/*   Updated: 2021/04/26 17:13:31 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	Brain::get_qi(void)
 	return (this->qi);
 }
 
-std::string	Brain::identify(void)
+std::string	Brain::identify(void) const
 {
 	std::ostringstream s;
 	s << this;

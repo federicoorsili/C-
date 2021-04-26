@@ -10,3 +10,8 @@ all:
 
 fclean:
 	rm -rf $(NAME)
+
+re:
+	fclean all
+
+clean: fclean

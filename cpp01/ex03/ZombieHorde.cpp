@@ -6,7 +6,7 @@
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 12:06:19 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/26 15:11:10 by forsili          ###   ########.fr       */
+/*   Updated: 2021/04/26 16:29:06 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@ ZombieHorde::ZombieHorde(int n)
 {
 	std::string	name_pool[5] = {"Mario", "Lillo", "Pippo", "Pluto", "Paolo"};
 	std::string	type_pool[5] = {"Grasso", "Magro", "Zoppo", "Alto", "Gigante"};
-	Zombie *zombie = new Zombie[n];
 	int			name;
 	int			type;
 
 	this->n = n;
-	this->zombie = zombie;
+	this->zombie = new Zombie[n];
 	srand(time(NULL));
 	for (int i = 0; i < n; i++)
 	{
@@ -35,6 +34,6 @@ ZombieHorde::ZombieHorde(int n)
 
 ZombieHorde::~ZombieHorde(void)
 {
-	//delete(this->zombie);
+	delete(this->zombie);
 }
 

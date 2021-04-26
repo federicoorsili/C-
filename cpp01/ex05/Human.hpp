@@ -6,7 +6,7 @@
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 12:16:47 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/26 16:05:58 by forsili          ###   ########.fr       */
+/*   Updated: 2021/04/26 17:14:24 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Human
 
 		int age;
 		int qi;
-		Brain	brain;
+		Brain	const brain;
 
 	public:
 
@@ -27,9 +27,7 @@ class Human
 
 		void	set_age(int input);
 		void	set_qi(int input);
-
-		void	make_brain(void);
-		Brain	&getBrain(void);
+		
+		Brain	const &getBrain(void);
 		std::string	identify(void);
-
 };

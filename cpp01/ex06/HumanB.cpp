@@ -6,7 +6,7 @@
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 12:01:31 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/26 12:12:00 by forsili          ###   ########.fr       */
+/*   Updated: 2021/04/26 17:23:44 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 HumanB::HumanB(std::string	name)
 {
 	this->name = name;
-	this->weapon = NULL;
 }
 
 void	HumanB::setName(std::string	input)
@@ -30,5 +29,8 @@ void	HumanB::setWeapon(Weapon &input)
 
 void	HumanB::attack(void)
 {
-	std::cout << this->name << " attacks with his " << this->weapon->getType() << std::endl;
+	if (!this->weapon)
+		std::cout << this->name << " attacks with his " << "a mano" << std::endl;
+	else
+		std::cout << this->name << " attacks with his " << this->weapon->getType() << std::endl;
 }

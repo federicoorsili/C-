@@ -6,7 +6,7 @@
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 12:56:04 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/23 14:16:03 by forsili          ###   ########.fr       */
+/*   Updated: 2021/04/26 17:00:11 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ponyOnTheHeap(void)
 	pony->set_montabile(false);
 	pony->stampa();
 	pony->run();
-	delete pony;
+	delete (pony);
 
 }
 
