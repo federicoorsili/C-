@@ -1,46 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/25 12:03:02 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/26 16:04:58 by forsili          ###   ########.fr       */
+/*   Created: 2021/04/26 11:36:52 by forsili           #+#    #+#             */
+/*   Updated: 2021/04/26 11:54:07 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Weapon.hpp"
 
-Brain::Brain(void)
+Weapon::Weapon(std::string input)
 {
-	this->age = 0;
-	this->qi = 0;
+	this->type = input;
 }
 
-void	Brain::set_age(int input)
+void	Weapon::setType(std::string input)
 {
-	this->age = input;
+	this->type = input;
 }
 
-void	Brain::set_qi(int input)
+std::string	&Weapon::getType(void)
 {
-	this->qi = input;
-}
-
-int Brain::get_age(void)
-{
-	return (this->age);
-}
-
-int	Brain::get_qi(void)
-{
-	return (this->qi);
-}
-
-std::string	Brain::identify(void)
-{
-	std::ostringstream s;
-	s << this;
-	return (s.str());
+	std::string	&tmp = this->type;
+	return (tmp);
 }

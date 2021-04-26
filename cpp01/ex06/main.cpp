@@ -1,46 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/25 12:03:02 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/26 16:04:58 by forsili          ###   ########.fr       */
+/*   Created: 2021/04/26 12:05:41 by forsili           #+#    #+#             */
+/*   Updated: 2021/04/26 12:05:43 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-Brain::Brain(void)
+int main()
 {
-	this->age = 0;
-	this->qi = 0;
-}
-
-void	Brain::set_age(int input)
-{
-	this->age = input;
-}
-
-void	Brain::set_qi(int input)
-{
-	this->qi = input;
-}
-
-int Brain::get_age(void)
-{
-	return (this->age);
-}
-
-int	Brain::get_qi(void)
-{
-	return (this->qi);
-}
-
-std::string	Brain::identify(void)
-{
-	std::ostringstream s;
-	s << this;
-	return (s.str());
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 }

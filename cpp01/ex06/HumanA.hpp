@@ -1,46 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/25 12:03:02 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/26 16:04:58 by forsili          ###   ########.fr       */
+/*   Created: 2021/04/26 11:49:38 by forsili           #+#    #+#             */
+/*   Updated: 2021/04/26 12:10:40 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#pragma once
+#include "Weapon.hpp"
 
-Brain::Brain(void)
+class HumanA
 {
-	this->age = 0;
-	this->qi = 0;
-}
+	private:
+	
+		std::string name;
+		Weapon	&weapon;
 
-void	Brain::set_age(int input)
-{
-	this->age = input;
-}
+	public:
+		
+		HumanA(std::string	input_name, Weapon &input_weapon);
+		void	setName(std::string	input);
+		void	setWeapon(Weapon input);
+		void	attack(void);
 
-void	Brain::set_qi(int input)
-{
-	this->qi = input;
-}
-
-int Brain::get_age(void)
-{
-	return (this->age);
-}
-
-int	Brain::get_qi(void)
-{
-	return (this->qi);
-}
-
-std::string	Brain::identify(void)
-{
-	std::ostringstream s;
-	s << this;
-	return (s.str());
-}
+};

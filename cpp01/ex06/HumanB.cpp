@@ -1,46 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/25 12:03:02 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/26 16:04:58 by forsili          ###   ########.fr       */
+/*   Created: 2021/04/26 12:01:31 by forsili           #+#    #+#             */
+/*   Updated: 2021/04/26 12:12:00 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "HumanB.hpp"
 
-Brain::Brain(void)
+HumanB::HumanB(std::string	name)
 {
-	this->age = 0;
-	this->qi = 0;
+	this->name = name;
+	this->weapon = NULL;
 }
 
-void	Brain::set_age(int input)
+void	HumanB::setName(std::string	input)
 {
-	this->age = input;
+	this->name = input;
 }
 
-void	Brain::set_qi(int input)
+void	HumanB::setWeapon(Weapon &input)
 {
-	this->qi = input;
+	this->weapon = &input;
 }
 
-int Brain::get_age(void)
+void	HumanB::attack(void)
 {
-	return (this->age);
-}
-
-int	Brain::get_qi(void)
-{
-	return (this->qi);
-}
-
-std::string	Brain::identify(void)
-{
-	std::ostringstream s;
-	s << this;
-	return (s.str());
+	std::cout << this->name << " attacks with his " << this->weapon->getType() << std::endl;
 }

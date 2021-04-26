@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 12:16:47 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/25 12:35:28 by forsili          ###   ########.fr       */
+/*   Updated: 2021/04/26 16:05:58 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Human
 		void	set_qi(int input);
 
 		void	make_brain(void);
-		Brain	getBrain(void);
-		Brain	*identify(void);
+		Brain	&getBrain(void);
+		std::string	identify(void);
 
 };

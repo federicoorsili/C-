@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Human.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 12:20:05 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/25 12:37:07 by forsili          ###   ########.fr       */
+/*   Updated: 2021/04/26 16:07:34 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,16 @@ void	Human::make_brain(void)
 
 	tmp.set_age(this->age);
 	tmp.set_qi(this->qi);
-	tmp.set_address(tmp);
 	this->brain = tmp;
 }
 
-Brain	Human::getBrain(void)
+Brain	&Human::getBrain(void)
 {
-	return (this->brain);
+	Brain &tmp = this->brain;
+	return (tmp);
 }
 
-Brain	*Human::identify(void)
+std::string	Human::identify(void)
 {
 	return (this->brain.identify());
 }

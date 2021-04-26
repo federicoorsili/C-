@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 12:03:45 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/24 12:47:01 by forsili          ###   ########.fr       */
+/*   Updated: 2021/04/26 15:07:02 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class	ZombieHorde
 	private:
 
 		int		n;
-		std::vector <Zombie*> zombie;
+		Zombie *zombie;
 
 	public:
 

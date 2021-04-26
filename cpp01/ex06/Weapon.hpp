@@ -1,46 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/25 12:03:02 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/26 16:04:58 by forsili          ###   ########.fr       */
+/*   Created: 2021/04/26 11:34:20 by forsili           #+#    #+#             */
+/*   Updated: 2021/04/26 11:54:02 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#pragma once
+#include <string>
+#include <iostream>
 
-Brain::Brain(void)
+class	Weapon
 {
-	this->age = 0;
-	this->qi = 0;
-}
+	private:
 
-void	Brain::set_age(int input)
-{
-	this->age = input;
-}
+		std::string	type;
 
-void	Brain::set_qi(int input)
-{
-	this->qi = input;
-}
+	public:
 
-int Brain::get_age(void)
-{
-	return (this->age);
-}
-
-int	Brain::get_qi(void)
-{
-	return (this->qi);
-}
-
-std::string	Brain::identify(void)
-{
-	std::ostringstream s;
-	s << this;
-	return (s.str());
-}
+		Weapon(std::string	input);
+		void	setType(std::string input);
+		std::string	&getType(void);
+		
+};

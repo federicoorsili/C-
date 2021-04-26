@@ -1,0 +1,12 @@
+NAME = weapon
+
+SRC = 	main.cpp \
+		HumanA.cpp \
+		HumanB.cpp \
+		Weapon.cpp \
+
+all:
+	clang++ -Wall -Werror -Wextra $(SRC) -o $(NAME)
+
+fclean:
+	rm -rf $(NAME)
