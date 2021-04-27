@@ -6,7 +6,7 @@
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 11:35:05 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/27 13:07:02 by forsili          ###   ########.fr       */
+/*   Updated: 2021/04/27 15:08:28 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,14 @@ Fixed::Fixed(Fixed const &copy)
 
 Fixed::Fixed(int const input)
 {
-	float tmp;
-
-	tmp = (float)(input);
-	this->fixed_poit_value = (int)((tmp) * (1 << this->fractional_bits));
+	std::cout << "Int constructor called" << std::endl;
+	this->fixed_poit_value = input << this->fractional_bits;
 }
 
 Fixed::Fixed(float const input)
 {
-	this->fixed_poit_value = (int)((input) * (1 << this->fractional_bits));
+	std::cout << "Float constructor called" << std::endl;
+	this->fixed_poit_value = (round((input) * (1 << this->fractional_bits)));
 }
 
 Fixed& Fixed::operator = (Fixed const &copy)

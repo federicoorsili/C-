@@ -6,13 +6,14 @@
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 11:28:04 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/27 12:54:24 by forsili          ###   ########.fr       */
+/*   Updated: 2021/04/27 15:05:30 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <string>
 #include <iostream>
+#include <cmath>
 
 class Fixed {
 
