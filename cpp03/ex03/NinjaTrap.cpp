@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   NinjaTrap.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
+/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 15:05:12 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/28 15:41:22 by forsili          ###   ########.fr       */
+/*   Updated: 2021/04/28 22:47:49 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,21 @@ NinjaTrap::NinjaTrap(NinjaTrap &copy)
 	setArmor_damage(copy.getArmor_damage());
 
 	std::cout << "Copy costructor NinjaTrap called" << std::endl;
+}
+
+void	ninjaShoebox(FragTrap &target)
+{
+	std::cout << target.getName() << " viene attaccato furtivamente da " << getName() << std::endl;
+}
+
+void	ninjaShoebox(NinjaTrap &target)
+{
+	std::cout << target.getName() << " viene attaccato furtivamente da " << getName() << std::endl;
+}
+
+void	ninjaShoebox(ScavTrap &target)
+{
+	std::cout << target.getName() << " viene attaccato furtivamente da " << getName() << std::endl;
 }
 
 NinjaTrap::~NinjaTrap(void) 

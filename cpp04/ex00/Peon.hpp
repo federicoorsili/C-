@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
+/*   Peon.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/28 15:02:42 by forsili           #+#    #+#             */
-/*   Updated: 2021/04/28 22:45:34 by forsili          ###   ########.fr       */
+/*   Created: 2021/04/28 23:04:39 by forsili           #+#    #+#             */
+/*   Updated: 2021/04/28 23:38:53 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <string>
 #include <iostream>
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#include "GeneralVictim.hpp"
 
-class NinjaTrap : public ClapTrap
+class Peon : public GeneralVictim
 {
-
 	public:
-
-		NinjaTrap(std::string name);
-		NinjaTrap(NinjaTrap &copy);
-		~NinjaTrap(void);
-		NinjaTrap& operator = (NinjaTrap &copy); //aggiungi
-		
-		void	ninjaShoebox(ClapTrap &target);
-		void	ninjaShoebox(FragTrap &target);
-		void	ninjaShoebox(NinjaTrap &target);
-		void	ninjaShoebox(ScavTrap &target);
+		Peon(std::string name);
+		Peon(Peon const &copy);
+		~Peon(void);
+		Peon operator = (Peon const &copy);
+		void getPolymorphed(void) const;
 
 };
 
+std::ostream& operator << (std::ostream& out, Peon const &copy);
