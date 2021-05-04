@@ -6,7 +6,7 @@
 /*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:32:23 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 17:38:04 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/04 19:31:22 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,9 @@ void	Form::beSigned(Bureaucrat & b)
 	if (b.getGrade() <= this->required_grade)
 	{
 		this->sign = true;
-		b.signForm(*this);
 	}
 	else if (b.getGrade() > this->required_grade)
 	{
-		b.signForm(*this);
 		throw Form::GradeToLowException();
 	}	
 }

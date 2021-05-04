@@ -6,7 +6,7 @@
 /*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:08:46 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 18:18:43 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/04 19:40:12 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main (void)
 	//Sign:
 	try
 	{
-		form1.beSigned(giggi);
+		giggi.signForm(form1);
 	}
 	catch(const std::exception& e)
 	{
@@ -37,7 +37,7 @@ int main (void)
 	std::cout << form1 << std::endl;
 	try
 	{
-		form1.beSigned(mimmo);
+		mimmo.signForm(form1);
 	}
 	catch(const std::exception& e)
 	{
@@ -67,7 +67,7 @@ int main (void)
 	//Sign:
 	try
 	{
-		form2.beSigned(giggi);
+		giggi.signForm(form2);
 	}
 	catch(const std::exception& e)
 	{
@@ -76,7 +76,7 @@ int main (void)
 	std::cout << form2 << std::endl;
 	try
 	{
-		form2.beSigned(mimmo);
+		mimmo.signForm(form2);
 	}
 	catch(const std::exception& e)
 	{
@@ -101,12 +101,10 @@ int main (void)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	//std::cout << form2 << std::endl;
 
-	//Sign:
 	try
 	{
-		form3.beSigned(giggi);
+		giggi.signForm(form3);
 	}
 	catch(const std::exception& e)
 	{
@@ -115,7 +113,7 @@ int main (void)
 	std::cout << form3 << std::endl;
 	try
 	{
-		form3.beSigned(mimmo);
+		mimmo.signForm(form3);
 	}
 	catch(const std::exception& e)
 	{
@@ -140,7 +138,4 @@ int main (void)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	//std::cout << form3 << std::endl;
-	
-	return (0);
 }

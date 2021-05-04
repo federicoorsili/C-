@@ -6,7 +6,7 @@
 /*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 15:41:38 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 16:42:52 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/04 19:31:14 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,9 @@ void		Bureaucrat::downGrade()
 		grade += 1;
 }
 
-void		Bureaucrat::signForm(Form const& form)
+void		Bureaucrat::signForm(Form& form)
 {
+	form.beSigned(*this);
 	if (this->grade <= form.getRequiredGrade())
 		std::cout << this->name << " signs " << form.getName() << std::endl;
 	else

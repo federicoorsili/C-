@@ -6,7 +6,7 @@
 /*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 15:36:46 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 16:54:35 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/04 19:31:05 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Bureaucrat
 		int			getGrade() const;
 		void		upGrade();
 		void		downGrade();
-		void		signForm(Form const& form);
+		void		signForm(Form& form);
 
 		class GradeToLowException: public std::exception
 		{
