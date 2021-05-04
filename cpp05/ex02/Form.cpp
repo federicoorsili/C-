@@ -6,7 +6,7 @@
 /*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:32:23 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 17:38:04 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/04 18:05:45 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,13 @@ std::ostream& operator<<(std::ostream &out, Form &form)
 	else
 		out << " isn't signed, required grade: " << form.getRequiredGrade() << std::endl;
 	return out;
+}
+
+void	Form::execute(Bureaucrat const & executor) const
+{
+	executor.executeForm(*this);
+	if (executor.getGrade() > this->required_exec)
+		throw Form::GradeToLowException();
 }
 
 Form::GradeToLowException::GradeToLowException() {}
