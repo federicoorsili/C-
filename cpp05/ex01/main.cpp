@@ -6,7 +6,7 @@
 /*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:08:46 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 16:59:48 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/04 17:04:52 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int main (void)
 {
 	Bureaucrat mimmo("Mimmo", 1);
 	Bureaucrat giggi("Giggi", 150);
-	Form		form1("AX34BL_Bis", 3);
-	Form		form2("Default", 150);
+	Form		form1("AX34BL_Bis", 3, 1);
+	Form		form2("Default", 150, 75);
 
 	try
 	{

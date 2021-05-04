@@ -6,7 +6,7 @@
 /*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:22:07 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 16:54:52 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/04 17:02:09 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ class Form
 		std::string const	name;
 		bool				sign;
 		int const			required_grade;
+		int const			required_exec;
 	public:
 		
 		Form();
-		Form(std::string name, int required_grade);
+		Form(std::string name, int required_grade, int required_exec);
 		Form(Form const& copy);
 		~Form();
 		Form& operator=(Form const &copy);
@@ -35,6 +36,7 @@ class Form
 		std::string getName() const;
 		bool		getSign() const;
 		int			getRequiredGrade() const;
+		int			getRequiredExec() const;
 
 		class GradeToLowException: public std::exception
 		{

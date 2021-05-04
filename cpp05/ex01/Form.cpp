@@ -6,27 +6,28 @@
 /*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:32:23 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 16:58:30 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/04 17:05:57 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : name("default"), required_grade(150)
+Form::Form() : name("default"), required_grade(150), required_exec(150)
 {
 	this->sign = false;
 }
 
-Form::Form(std::string name, int required_grade) : name(name), required_grade(required_grade)
+Form::Form(std::string name, int required_grade, int required_exec) 
+: name(name), required_grade(required_grade), required_exec(required_exec)
 {
-	if (required_grade > 150)
+	if (required_grade > 150 || required_exec > 150)
 		throw Form::GradeToLowException();
-	else if (required_grade < 1)
+	else if (required_grade < 1 || required_exec < 1)
 		throw Form::GradeToHightException();
 	this->sign = false;
 }
 
-Form::Form(Form const& copy) : name(copy.getName()), required_grade(copy.required_grade)
+Form::Form(Form const& copy) : name(copy.getName()), required_grade(copy.required_grade), required_exec(copy.getRequiredExec())
 {
 	this->sign = copy.sign;
 }
@@ -66,6 +67,11 @@ bool		Form::getSign() const
 int			Form::getRequiredGrade() const
 {
 	return this->required_grade;
+}
+
+int			Form::getRequiredExec() const
+{
+	return this->required_exec;
 }
 
 std::ostream& operator<<(std::ostream &out, Form &form)
