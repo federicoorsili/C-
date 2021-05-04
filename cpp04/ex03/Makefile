@@ -1,9 +1,11 @@
-NAME = ex02
+NAME = ex03
 
 SRC = 	main.cpp \
-		AssaultTerminator.cpp \
-		Squad.cpp \
-		TacticalMarine.cpp \
+		AMateria.cpp \
+		Character.cpp \
+		Cure.cpp \
+		Ice.cpp \
+		MateriaSource.cpp \
 
 
 all:
