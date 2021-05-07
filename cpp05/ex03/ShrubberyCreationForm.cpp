@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 17:26:55 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 19:54:13 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/07 15:02:34 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 145, 137)
 {
-	this->target = "default";
+	this->setTarget("default");
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 145, 137)
 {
-	this->target = target;
+	this->setTarget(target);
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & copy) : Form("ShrubberyCreationForm", 145, 137)
 {
-	this->target = copy.target;
+	this->setTarget(copy.getTarget());
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const &copy)
 {
-	this->target = copy.target;
+	this->setTarget(copy.getTarget());
 	return *this;
 }
 
@@ -43,7 +43,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	if (executor.getGrade() > this->getRequiredExec())
 		throw Form::GradeToLowException();
 
-	output.open(target + "_shruberry", std::ofstream::out | std::ofstream::trunc);
+	output.open(this->getTarget() + "_shruberry", std::ofstream::out | std::ofstream::trunc);
 	if (!output.is_open())
 	{
 		std::cout << "Can't open the file" << std::endl;

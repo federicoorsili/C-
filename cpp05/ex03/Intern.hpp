@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 18:28:12 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 19:16:12 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/07 15:10:26 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ class Intern
 		{
 			public:
 				NotFoundException();
-				~NotFoundException();
 				virtual const char*	what() const throw();
 		};
 };

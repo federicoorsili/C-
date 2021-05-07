@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 17:55:10 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 17:56:13 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/07 15:01:24 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 class	PresidentialPardonForm: public Form
 {
-	private:
-		std::string target;
 	public:
 
 		PresidentialPardonForm();

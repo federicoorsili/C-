@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:22:07 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 19:54:37 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/07 15:07:24 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Form
 		bool				sign;
 		int const			required_grade;
 		int const			required_exec;
+		std::string 		target;
 	public:
 		
 		Form();
@@ -39,20 +40,18 @@ class Form
 		bool		getSign() const;
 		int			getRequiredGrade() const;
 		int			getRequiredExec() const;
+		std::string	getTarget() const;
+		void		setTarget(std::string target);
 
 		class GradeToLowException: public std::exception
 		{
 			public:
-				GradeToLowException();
-				~GradeToLowException();
 				virtual const char*	what() const throw();
 		};
 
 		class GradeToHightException: public std::exception
 		{
 			public:
-				GradeToHightException();
-				~GradeToHightException();
 				virtual const char*	what() const throw();
 		};
 

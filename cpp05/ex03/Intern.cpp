@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 18:36:15 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 19:49:22 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/07 15:10:36 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,6 @@ Form*	Intern::makeForm(std::string _form, std::string _target)
 }
 
 Intern::NotFoundException::NotFoundException() {}
-
-Intern::NotFoundException::~NotFoundException() {}
 
 const char*	Intern::NotFoundException::what() const throw()
 {

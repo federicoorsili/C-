@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 17:47:16 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 17:50:07 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/07 15:01:14 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 
 class	RobotomyRequestForm: public Form
 {
-	private:
-		std::string target;
 	public:
 
 		RobotomyRequestForm();

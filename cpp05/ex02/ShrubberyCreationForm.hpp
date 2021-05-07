@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 17:19:35 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 17:32:16 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/07 15:02:46 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include <fstream>
 class	ShrubberyCreationForm: public Form
 {
-	private:
-		std::string target;
 	public:
 
 		ShrubberyCreationForm();

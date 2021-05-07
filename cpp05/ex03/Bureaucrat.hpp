@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 15:36:46 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 19:35:23 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/07 15:08:04 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,12 @@ class Bureaucrat
 		class GradeToLowException: public std::exception
 		{
 			public:
-				GradeToLowException();
-				~GradeToLowException();
 				virtual const char*	what() const throw();
 		};
 
 		class GradeToHightException: public std::exception
 		{
 			public:
-				GradeToHightException();
-				~GradeToHightException();
 				virtual const char*	what() const throw();
 		};
 };
