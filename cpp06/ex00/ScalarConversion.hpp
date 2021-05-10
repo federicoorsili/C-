@@ -6,7 +6,7 @@
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 12:22:12 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/10 13:16:15 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/10 14:51:04 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 #include <string>
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
 class   ScalarConversion
 {
     private:
 
         char    *arg;
+        ScalarConversion();
     
     public:
 
-        ScalarConversion();
         ScalarConversion(char *arg);
         ScalarConversion(ScalarConversion & copy);
         ~ScalarConversion();
@@ -31,7 +32,7 @@ class   ScalarConversion
         ScalarConversion& operator = (ScalarConversion const& copy);
         void    setArg(char *arg);
         char    *getArg() const;
-        int     check();
+        void     check();
         void    display(float n);
         void    displaychar(float n);
         void    displayfloat(float n);
@@ -41,17 +42,26 @@ class   ScalarConversion
         class ImpossibleToCast: public std::exception
 		{
 			public:
-				virtual const char*	what() const throw();
+				virtual const char*	what() const throw()
+                {
+                    return "impossible";
+                }
 		};
         class NotDisplayable: public std::exception
 		{
 			public:
-				virtual const char*	what() const throw();
+				virtual const char*	what() const throw()
+                {
+                    return "Non displayable";
+                }
 		};
         class NotCastable: public std::exception
 		{
 			public:
-				virtual const char*	what() const throw();
+				virtual const char*	what() const throw()
+                {
+                    return "Error: not castable";
+                }
 		};
 };
 

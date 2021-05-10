@@ -6,7 +6,7 @@
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 12:31:55 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/10 13:26:54 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/10 15:16:00 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ScalarConversion::ScalarConversion()
 {
-    arg = "0";
+    arg = NULL;
 }
 
 ScalarConversion::ScalarConversion(char *arg)
@@ -45,7 +45,7 @@ char    *ScalarConversion::getArg() const
     return this->arg;
 }
 
-int     ScalarConversion::check()
+void     ScalarConversion::check()
 {
     std::string s(arg);
     float   n;
@@ -57,12 +57,14 @@ int     ScalarConversion::check()
         }
         else
             n = stof(s);
-        display(n);
     }
     catch (std::exception& e)
     {
         throw ScalarConversion::NotCastable();
     }
+
+    display(n);
+    
 }
 
 void    ScalarConversion::display(float n)
@@ -76,34 +78,54 @@ void    ScalarConversion::display(float n)
 void    ScalarConversion::displaychar(float n)
 {
     std::cout << "char: ";
-    if (n <= 32 || n > 126)
-        throw ScalarConversion::NotDisplayable();
-    else if (n == std::numeric_limits<float>::infinity() ||
-            n == -std::numeric_limits<float>::infinity() ||
-            std::isnan(n))
-        throw ScalarConversion::ImpossibleToCast();
-    else
-        std::cout << static_cast<char>(n) << std::endl;
+    try
+    {
+        if ((n >= 0 && n <= 32) || n == 127)
+            throw ScalarConversion::NotDisplayable();
+        else if (n == std::numeric_limits<float>::infinity() ||
+                n == -std::numeric_limits<float>::infinity() ||
+                std::isnan(n) || n > 127 || n < 0)
+            throw ScalarConversion::ImpossibleToCast();
+        else
+            std::cout << "'" << static_cast<char>(n) << "'" << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     
 }
 
 void    ScalarConversion::displayfloat(float n)
 {
-    std::cout << "float: " << n << std::endl;
+    if (n - int(n) == 0)
+        std::cout << "float: " << static_cast<float>(n) << ".0f" << std::endl;
+    else 
+        std::cout << "float: " << static_cast<float>(n) << "f" << std::endl;
 }
 void    ScalarConversion::displayint(float n)
 {
     std::cout << "int: ";
-    if (n > std::numeric_limits<int>::max() ||
-        n < std::numeric_limits<int>::min() ||
-        n > std::numeric_limits<float>::infinity() ||
-        n == -std::numeric_limits<float>::infinity() ||
-        std::isnan(n))
-        throw ScalarConversion::ImpossibleToCast();
-    else
-        std::cout << static_cast<int>(n) << std::endl;
+    try
+    {
+        if (n > std::numeric_limits<int>::max() ||
+            n < std::numeric_limits<int>::min() ||
+            n > std::numeric_limits<float>::infinity() ||
+            n == -std::numeric_limits<float>::infinity() ||
+            std::isnan(n))
+            throw ScalarConversion::ImpossibleToCast();
+        else
+            std::cout << static_cast<int>(n) << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }
 void    ScalarConversion::displaydouble(float n)
 {
-    std::cout << "double: " << static_cast<double>(n) << std::endl;
+    if (n - int(n) == 0)
+        std::cout << "double: " << static_cast<double>(n) << ".0" << std::endl;
+    else
+        std::cout << "double: " << static_cast<double>(n) << std::endl;
 }
