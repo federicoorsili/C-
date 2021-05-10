@@ -6,7 +6,7 @@
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 18:36:15 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/07 15:10:36 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/10 18:00:51 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 Intern::Intern(void)
 {
-	names[1] = "shrubbery request";
+	names[0] = "shrubbery request";
 	names[1] = "robotomy request";
-	names[1] = "pardon request";
+	names[2] = "pardon request";
 
 	funcptr[0] = Intern::newShrubbery;
 	funcptr[1] = Intern::newRobotomy;
@@ -55,7 +55,7 @@ Form*	Intern::makeForm(std::string _form, std::string _target)
 {
 	for (size_t i = 0; i < 3; i++)
 	{
-		if (_form.find(names[i]))
+		if (!_form.compare(names[i]))
 		{
 			std::cout << "Intern creates " << _form << " target: " << _target << std::endl;
 			return this->funcptr[i](_target);

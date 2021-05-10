@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:08:46 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 19:51:34 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/10 17:58:13 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main (void)
 	//Sign:
 	try 
 	{
-		form = intern.makeForm("shrubbery request", "nando");
+		form = intern.makeForm("robotomy request", "nando");
 	}
 	catch(const std::exception& e)
 	{
