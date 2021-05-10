@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:32:23 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 19:31:22 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/10 17:45:36 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,18 +82,10 @@ std::ostream& operator<<(std::ostream &out, Form &form)
 	return out;
 }
 
-Form::GradeToLowException::GradeToLowException() {}
-
-Form::GradeToLowException::~GradeToLowException() {}
-
 const char*	Form::GradeToLowException::what() const throw()
 {
 	return ("Exception: To low required grade for Form");
 }
-
-Form::GradeToHightException::GradeToHightException() {}
-
-Form::GradeToHightException::~GradeToHightException() {}
 
 const char*	Form::GradeToHightException::what() const throw()
 {

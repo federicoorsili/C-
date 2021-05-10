@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:22:07 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 19:31:27 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/10 17:45:26 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,12 @@ class Form
 		class GradeToLowException: public std::exception
 		{
 			public:
-				GradeToLowException();
-				~GradeToLowException();
 				virtual const char*	what() const throw();
 		};
 
 		class GradeToHightException: public std::exception
 		{
 			public:
-				GradeToHightException();
-				~GradeToHightException();
 				virtual const char*	what() const throw();
 		};
 

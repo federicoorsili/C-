@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 15:41:38 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 19:31:14 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/10 17:45:02 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,18 +75,10 @@ void		Bureaucrat::signForm(Form& form)
 
 }
 
-Bureaucrat::GradeToLowException::GradeToLowException() {}
-
-Bureaucrat::GradeToLowException::~GradeToLowException() {}
-
 const char*	Bureaucrat::GradeToLowException::what() const throw()
 {
 	return ("Exception: To low grade");
 }
-
-Bureaucrat::GradeToHightException::GradeToHightException() {}
-
-Bureaucrat::GradeToHightException::~GradeToHightException() {}
 
 const char*	Bureaucrat::GradeToHightException::what() const throw()
 {

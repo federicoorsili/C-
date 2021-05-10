@@ -6,7 +6,7 @@
 /*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:22:07 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/07 15:07:24 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/10 17:47:55 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class Form
 		int const			required_grade;
 		int const			required_exec;
 		std::string 		target;
+		Form();
 	public:
 		
-		Form();
 		Form(std::string name, int required_grade, int required_exec);
 		Form(Form const& copy);
 		~Form();

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:08:46 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/04 16:19:31 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/10 17:43:31 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int main (void)
 		std::cout << b;
 		b.upGrade();
 		std::cout << b;
-		b.upGradea();
+		b.upGrade();
 		std::cout << b;
 	}
 	catch(std::exception& e)
