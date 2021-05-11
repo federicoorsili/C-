@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 23:50:24 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/11 00:05:03 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/11 11:43:33 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,18 @@ class Array
 	public:
 		Array()
 		{
-			this->arr = new T[];
+			this->arr = new T[0];
 			len = 0;
 		}
 
 		Array(unsigned int n)
 		{
 			this->arr = new T[n];
+			for (unsigned int i = 0; i < n; i++)
+			{
+				this->arr[i] = 0;
+			}
+			
 			len = n;
 		}
 
@@ -38,8 +43,10 @@ class Array
 			delete[] this->arr;
 		}
 
-		Array & operator[](int index)
+		T & operator[](unsigned int index)
 		{
+			if (index >= this->len)
+				throw	Array::overException();
 			return this->arr[index];
 		}
 
@@ -49,12 +56,30 @@ class Array
 			{
 				this->arr[i] = copy.arr[i];
 			}
-			this->len = copy.len
+			this->len = copy.len;
 		}
 
 		unsigned int size()
 		{
 			return this->len;
 		}
+
+		void	print()
+		{
+			for (unsigned int i = 0; i < this->len; i++)
+			{
+				std::cout << this->arr[i] << "|";
+			}
+			std::cout << "\n";
+		}
+
+		class overException: public std::exception
+		{
+			public:
+				virtual const char*	what() const throw()
+				{
+					return "Exception index out of range\n";
+				}
+		};
 };
 

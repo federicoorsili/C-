@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forsili <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: forsili <forsili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 00:01:50 by forsili           #+#    #+#             */
-/*   Updated: 2021/05/11 00:04:34 by forsili          ###   ########.fr       */
+/*   Updated: 2021/05/11 11:44:05 by forsili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,35 @@ int main()
 {
 	Array<int> c = Array<int>(5);
 
-	c[4] = 3;
+	std::cout << "INTEGER" << c.size() << "\n";
+	try
+	{
+		c[4] = 9;
+		c[6] = 0;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what();
+	}
 
-	std::cout << c[0] << c[1] << c[2] << c[3] << c[4] << "\n";
+	c.print();
+	std::cout << "SIZE: " << c.size() << "\n";
+
+	Array<char> s = Array<char>(5);
+
+	std::cout << "CHAR:\n";
+	try
+	{
+		s[4] = 'a';
+		s[6] = 0;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what();
+	}
+
+	s.print();
+	std::cout << "SIZE: " << s.size() << "\n";
+
 	return 0;
 }
